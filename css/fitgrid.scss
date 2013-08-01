@@ -1,0 +1,356 @@
+/*
+	.fitgrd - responsive grid system
+	open http://www.fitgrd.com for more information
+	download at https://github.com/jayalai/fitgrd
+	Licensed under GPL and MIT.
+*/
+
+/* ======================================= 
+   configuration
+   ======================================= */
+
+//variables
+$column-margin: 2%; //column margin
+$center-max-width: 80em; //max width for the center class
+$row-padding: 2%; //row padding
+
+
+//columns w/ margin mixin
+@mixin column-width($column-spans){
+	width: (100% / 12) * $column-spans - ($column-margin * 2)
+}
+
+//colums w/o margin
+@mixin column-width-no-gutter($column-spans){
+	width: (100% / 12) * $column-spans
+}
+
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	outline: none;
+	vertical-align: top;
+}
+
+.center {
+	max-width: $center-max-width;
+	margin: 0 auto;
+}
+
+.row {
+	margin: 0;
+	padding: $row-padding $row-padding 0;
+	overflow: hidden;
+	height: 1%;
+	*zoom: 1;
+	min-height: 1%;
+}
+
+
+.clearfix {
+	height:0;
+	clear:both;
+	display:block;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+	height:0;
+}
+
+
+
+/* ======================================= 
+   columns w/ margin
+   ======================================= */
+
+.fg1,.fg2,.fg3,.fg4,.fg5,.fg6,.fg7,.fg8,.fg9,.fg10,.fg11,.fg12 {
+	margin:0 $column-margin;
+	padding:0;
+	float:left;
+	position:relative;
+}
+
+.fg12 {
+	@include column-width(12);
+}
+
+.fg11 {
+	@include column-width(11);
+}
+
+.fg10 {
+	@include column-width(10);
+}
+
+.fg9 {
+	@include column-width(9);
+}
+
+.fg8 {
+	@include column-width(8);
+}
+
+.fg7 {
+	@include column-width(7);
+}
+
+.fg6 {
+	@include column-width(6);
+}
+
+.fg5 {
+	@include column-width(5);
+}
+
+.fg4 {
+	@include column-width(4);
+}
+
+.fg3 {
+	@include column-width(3);
+}
+
+.fg2 {
+	@include column-width(2);
+}
+
+.fg1 {
+	@include column-width(1);
+}
+
+/* ======================================= 
+   push w/ columns
+   ======================================= */
+   
+.push12 {
+	margin-left:100%;
+}
+
+.push11 {
+	margin-left:93.66%;
+}
+
+.push10 {
+	margin-left:85.33%;
+}
+
+.push9 {
+	margin-left:77%;
+}
+
+.push8 {
+	margin-left:68.66%;
+}
+
+.push7 {
+	margin-left:60.33%;
+}
+
+.push6 {
+	margin-left:52%;
+}
+
+.push5 {
+	margin-left:43.66%;
+}
+
+.push4 {
+	margin-left:35.33%;
+}
+
+.push3 {
+	margin-left:27%;
+}
+
+.push2 {
+	margin-left:18.66%;
+}
+
+.push1 {
+	margin-left:10.33%;
+}
+
+/* ======================================= 
+   columns w/o margin
+   ======================================= */
+
+  
+.fg-no-gutter{
+	padding: 0 ($row-padding * 2);
+	margin-top: 0;
+	margin-bottom: 0;
+}  
+
+   
+.fg-no-gutter > [class*="fg"] {
+	margin:0;
+	padding:0;
+	float:left;
+	position:relative;
+}
+
+.fg-no-gutter .fg12 {
+	@include column-width-no-gutter(12);
+}
+
+.fg-no-gutter .fg11 {
+	@include column-width-no-gutter(11);
+}
+
+.fg-no-gutter .fg10 {
+	@include column-width-no-gutter(10);
+}
+
+.fg-no-gutter .fg9 {
+	@include column-width-no-gutter(9);
+}
+
+.fg-no-gutter .fg8 {
+	@include column-width-no-gutter(8);
+}
+
+.fg-no-gutter .fg7 {
+	@include column-width-no-gutter(7);
+}
+
+.fg-no-gutter .fg6 {
+	@include column-width-no-gutter(6);
+}
+
+.fg-no-gutter .fg5 {
+	@include column-width-no-gutter(5);
+}
+
+.fg-no-gutter .fg4 {
+	@include column-width-no-gutter(4);
+}
+
+.fg-no-gutter .fg3 {
+	@include column-width-no-gutter(3);
+}
+
+.fg-no-gutter .fg2 {
+	@include column-width-no-gutter(2);
+}
+
+.fg-no-gutter .fg1 {
+	@include column-width-no-gutter(1);
+}
+
+/* ======================================= 
+   push columns w/o margin
+   ======================================= */
+   
+.fg-no-gutter .push12 {
+	margin-left:100%;
+}
+
+.fg-no-gutter .push11 {
+	margin-left:91.66%;
+}
+
+.fg-no-gutter .push10 {
+	margin-left:83.33%;
+}
+
+.fg-no-gutter .push9 {
+	margin-left:75%;
+}
+
+.fg-no-gutter .push8 {
+	margin-left:66.66%;
+}
+
+.fg-no-gutter .push7 {
+	margin-left:58.33%;
+}
+
+.fg-no-gutter .push6 {
+	margin-left:50%;
+}
+
+.fg12 .push5 {
+	margin-left:41.66%;
+}
+
+.fg-no-gutter .push4 {
+	margin-left:33.33%;
+}
+
+.fg-no-gutter .push3 {
+	margin-left:25%;
+}
+
+.fg-no-gutter .push2 {
+	margin-left:16.66%;
+}
+
+.fg-no-gutter .push1 {
+	margin-left:8.33%;
+}
+
+.fg-no-mobile{
+	display: block;
+}
+
+.fg-no-desktop{
+	display: none;
+}
+
+/* ======================================= 
+   media queries
+   ======================================= */
+   
+/* smartphone size */
+@media screen and (max-width: 30em ) {
+	
+	.row{
+		padding: 0 1em;
+		margin: 0;
+	}
+	
+	.fg1,.fg2{
+		width: 46%;
+		margin-bottom: 1em;
+	}	
+	
+	
+	.fg3,.fg4,.fg5,.fg6,.fg7,.fg8,.fg9,.fg10,.fg11,.fg12 {
+		margin:0 2% 1em;
+		padding:0;
+		width:96%;
+	}
+	
+	.fg-no-gutter > [class*="fg"] {
+		width: 50%;
+	}
+	
+	.fg-no-mobile{
+		display: none;
+	}
+	
+	.fg-no-desktop{
+		display: block;
+	}
+
+}
+
+
+/* phone landscape */
+@media screen and (max-width: 30em) and (orientation:landscape){
+
+	
+}
+
+/* ipad portrait */
+@media only screen and (max-device-width: 64em) and (orientation:portrait) {
+	
+}
+
+
+/* ipad landscape */
+@media only screen and (max-device-width: 64em) and (orientation:landscape) {
+	
+}
